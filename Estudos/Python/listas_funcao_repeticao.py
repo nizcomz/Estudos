@@ -7,9 +7,19 @@ def historico(historico_transacoes):
         # cada transacao é exibida, exemplo: transacao = "Depósito de 100 reais"
         print(transacao)
 
+def verificacao(verificacao_deposito, verificacao_saque):
+    for saque in verificacao_saque:
+        print("Você selecionou Saque !")
+    for deposito in verificacao_deposito:
+            print("Você selecionou deposito !")
+
+        
+    
 # = atribui um valor, exemplo: nome = "João" armazena "João" na variável nome
 # [ ] = cria uma lista vazia, exemplo: compras = [ ] cria uma lista para adicionar itens
 historico_transacoes = [ ]
+verificacao_deposito = [ "Depósito", "deposito", "DEPOSITO", "DePoSiTo"]
+verificacao_saque = ["saque", "Saque", "SAQUE", "SaQuE"]
 
 # while True = cria um loop infinito, exemplo: while True: faz o programa repetir forever até break
 while True:
@@ -27,8 +37,8 @@ while True:
         
         # transacao = armazena o que o usuário digita, exemplo: "Saque de 50 reais"
         escolha = input("Qual transação você seja realizar (Saque/Depósito): ")
-
-        if escolha == "Saque": #Se a transação for "Saque", executa o bloco abaixo
+        
+        if escolha in [verificacao_saque]: #Se a transação for "Saque", executa o bloco abaixo
             while True:
                 valor_saque = float(input("Qual valor você deseja sacar ? ")) #V
                 if valor_saque > 0:
@@ -37,7 +47,7 @@ while True:
                 else:
                     print("Valor inválido para saque.")
                     
-        elif escolha == "deposito": # se a escolha receber o valor deposito 
+        elif escolha in [verificacao_saque]: # se a escolha receber o valor deposito 
                 while True:
                     valor_deposito = float(input("Qual valor você deseja depositar ? ")) 
                     if valor_deposito > 0:
