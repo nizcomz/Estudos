@@ -7,9 +7,27 @@ def historico(historico_transacoes):
         # cada transacao é exibida, exemplo: transacao = "Depósito de 100 reais"
         print(transacao)
 
+def verificacao(verificacao_saque, verificacao_deposito):
+    if escolha in verificacao_saque:
+        print("Transação selecionada: SAQUE")
+        return "saque"
+    elif escolha in verificacao_deposito:
+        print("Transação selecionada: DEPÓSITO")
+        return "deposito"
+    else:
+        print("Transação inválida. Por favor, escolha entre 'Saque' ou 'Depósito'.")
+        return None
+
+
+    
+
 # = atribui um valor, exemplo: nome = "João" armazena "João" na variável nome
 # [ ] = cria uma lista vazia, exemplo: compras = [ ] cria uma lista para adicionar itens
 historico_transacoes = [ ]
+verificacao_saque = ["saque", "SAQUE", "Saque", "SaQuE"]
+verificacao_deposito = ["deposito", "DEPOSITO", "Deposito", "DePoSiTo"]
+
+
 
 # while True = cria um loop infinito, exemplo: while True: faz o programa repetir forever até break
 while True:
@@ -26,29 +44,30 @@ while True:
     if opcao == "1":
         
         # transacao = armazena o que o usuário digita, exemplo: "Saque de 50 reais"
-        escolha = input("Qual transação você seja realizar (Saque/Depósito): ")
+        escolha = input("Qual transação você seja realizar (Saque/Depósito): ").lower()
 
-        if escolha == "Saque": #Se a transação for "Saque", executa o bloco abaixo
+        if escolha in verificacao(verificacao_saque, verificacao_deposito): 
             while True:
                 valor_saque = float(input("Qual valor você deseja sacar ? ")) #V
                 if valor_saque > 0:
                     transacao = -valor_saque  # retorna o valor que foi sacado
+                    # .append() = adiciona item ao final da lista, exemplo: lista.append("novo item")
+                    historico_transacoes.append(transacao)
+                    print("Transação adicionada com sucesso!")
                     break
                 else:
                     print("Valor inválido para saque.")
                     
-        elif escolha == "deposito": # se a escolha receber o valor deposito 
-                while True:
-                    valor_deposito = float(input("Qual valor você deseja depositar ? ")) 
-                    if valor_deposito > 0:
-                        transacao = valor_deposito
-                        break
-                    else:
-                        print("Valor inválido !")
-                
-        # .append() = adiciona item ao final da lista, exemplo: lista.append("novo item")
-        historico_transacoes.append(transacao)
-        print("Transação adicionada com sucesso!")  
+        elif escolha in verificacao(verificacao_deposito): 
+            while True:
+                valor_deposito = float(input("Qual valor você deseja depositar ? ")) 
+                if valor_deposito > 0:
+                    transacao = valor_deposito
+                    historico_transacoes.append(transacao)
+                    print("Transação adicionada com sucesso!")
+                    break
+                else:
+                    print("Valor inválido !")      
 
     # elif = "se não, se", exemplo: elif opcao == "2": verifica outra condição
     elif opcao == "2":
