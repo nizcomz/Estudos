@@ -1,4 +1,4 @@
-# 1. Nossa função (a máquina que valida e ajusta o valor)
+# 1. função (a máquina que valida e ajusta o valor)
 def processar_valor(escolha):
     valor = float(input(f"Digite o valor para {escolha}: R$ "))
     
