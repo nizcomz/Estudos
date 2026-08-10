@@ -38,3 +38,7 @@ while True:
         print(f"Histórico de movimentações: {historico}")
     else:
         print("Opção inválida! Escolha 'deposito', 'saque' ou 'sair'.")
+
+
+
+
