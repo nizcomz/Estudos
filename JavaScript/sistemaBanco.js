@@ -19,7 +19,6 @@ function saque(conta, valor) {
 
 }
 
-
-saque(conta, 100);
 depositar(conta, 50);
+saque(conta, 100);
 
