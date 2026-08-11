@@ -5,7 +5,7 @@ let conta = {
 
 function depositar(conta,valor) {
     conta.saldo = conta.saldo + valor;
-    console.log('Depósito de ${valor} realizado. Novo saldo: ${conta.saldo}')
+    console.log(`Depósito de ${valor} realizado. Novo saldo: ${conta.saldo}`);
 }
 
-depositar(conta, 50)
+depositar(conta, 50);
