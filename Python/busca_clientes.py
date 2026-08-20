@@ -1,37 +1,48 @@
 
 def login_check(credentials):
-    while True:
-        if credentials_bd in credentials:
+        if "admin" in credentials and "1234" in credentials:
             print("Acesso Permitido")
             return True
-        break
-    else:
-        print("Acesso negado !"
-        "\nTente novamente !")
-        return None
+        else:
+            print("Acesso negado !"
+            "\nTente novamente !")
+            return None
 
-def search_clients(serch):
-    for clients in serch:
-        for clients 
-
-
-
-credentials_bd = [
-    {"login": "admin"},
-    {"passwor": "1234"}
-]
-
+def search_clients(name):
+    for cleint in clients:
+         if clients["Nome"].lower() == name.lower():
+              return name         
+    return None
+         
 clients = [
-    {"id": 1, "nome": "Maria Silva", "telefone": "31 99999-9999", "procedimento": "Limpeza de pele"},
-    {"id": 2, "nome": "João Santos", "telefone": "31 98888-8888", "procedimento": "Microagulhamento"},
-    {"id": 3, "nome": "Ana Costa", "telefone": "31 97777-7777", "procedimento": "Drenagem Linfática"},
-    {"id": 4, "nome": "Pedro Oliveira", "telefone": "31 96666-6666", "procedimento": "Massagem Relaxante"}
+    {"id": 1,
+      "Nome": "Maria Silva",
+      "Telefone": "31 99999-9999",
+        "Procedimento": "Limpeza de pele"},
+
+    {"id": 2,
+      "Nome": "João Santos",
+        "Telefone": "31 98888-8888",
+          "Procedimento": "Microagulhamento"},
+
+    {"id": 3,
+      "Nome": "Ana Costa",
+        "Telefone": "31 97777-7777",
+          "Procedimento": "Drenagem Linfática"},
+
+    {"id": 4,
+      "Nome": "Pedro Oliveira",
+        "Telefone": "31 96666-6666",
+          "Procedimento": "Massagem Relaxante"}
 ]
+
+
+login = input("Por favor, digite seu login: ")
+password = input("Por favor digite sua senha: ")
+
 
 while True:
-    login = input("Por favor, digite seu login: ")
-    password = input("Por favor digite sua senha: ")
-    login_check(login, password)
+    check_result = login_check(login, password)
 
     choice = input("\nBem vindo ao BD Clinica"
                     "\nEscolha uma opção de consulta"
@@ -46,7 +57,9 @@ while True:
 
     if choice == "2":
         client_name = input("Digite o nome do cliente que deseja consultar: ")
-            name_serch = search_clients(client_name)
+        serch_result = search_clients(client_name)
+        print(serch_result)
+
 
 
     
